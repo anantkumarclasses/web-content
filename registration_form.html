@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+</head>
+<body>
+    <h2>Student Admission Form</h2>
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdrsBlpXI0J4bNVUapK0HAkIzw7mnedQmbMeLBMOhaM-pLWSw/formResponse" method="POST" target="hidden_iframe"
+  onsubmit="handleSubmission()">
+        
+        <label for="name">Name of the student:</label>
+        <input type="text" id="name" name="entry.1348744717" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="entry.1385112242" required><br><br>
+
+        <label for="phone">Phone number:</label>
+        <input type="tel" id="phone" name="entry.2109500861" required><br><br>
+
+        <label for="class">Class:</label>
+        <select id="class" name="entry.869948361" required>
+            <option value="Class 09">Class 09</option>
+            <option value="Class 10">Class 10</option>
+            <option value="Class 11">Class 11</option>
+            <option value="Class 12">Class 12</option>
+            <option value="Class 12+">Class 12+</option>
+        </select><br><br>
+
+        <label for="subjects">Admission required for subjects:</label>
+        <select id="subjects" name="entry.1852939161" required>
+            <option value="Physics only">Physics only</option>
+            <option value="Mathematics only">Mathematics only</option>
+            <option value="Both Physics and Mathematics">Both Physics and Mathematics</option>
+        </select><br><br>
+
+        <label for="school">School currently enrolled in:</label>
+        <input type="text" id="school" name="entry.1107128771"><br><br>
+
+        <label for="percentage">Aggregate percentage in the last qualifying exam:</label>
+        <input type="number" id="percentage" name="entry.843243160" min="0" max="100" required><br><br>
+
+        <label for="guardian">Parent's/Guardian's name:</label>
+        <input type="text" id="guardian" name="entry.1559032271" required><br><br>
+
+        <label for="guardian_phone">Parent's/Guardian's Phone number:</label>
+        <input type="tel" id="guardian_phone" name="entry.965840055" required><br><br>
+
+        <label>Competitive examinations intending to appear after Class 12 (for Class 11 & 12 only):</label><br>
+        <input type="checkbox" name="entry.218276284" value="JEE Mains"> JEE Mains<br>
+        <input type="checkbox" name="entry.218276284" value="JEE Advanced"> JEE Advanced<br>
+        <input type="checkbox" name="entry.218276284" value="NEET"> NEET<br>
+        <input type="checkbox" name="entry.218276284" value="ISI"> ISI<br>
+        <input type="checkbox" name="entry.218276284" value="CMI"> CMI<br>
+        <input type="checkbox" name="entry.218276284" value="Others"> Others<br><br>
+
+        <label for="photo">Upload a recent photograph of the student:</label>
+        <input type="file" id="photo" name="entry.1585748674" accept="image/*" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+  <script>
+    function handleSubmission() {
+      setTimeout(function() {
+        window.location.href = 'thank_you.html';
+      }, 500); 
+    }
+  </script>
+</body>
+</html>
