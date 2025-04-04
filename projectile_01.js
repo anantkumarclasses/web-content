@@ -25,9 +25,10 @@ function update() {
     ball.vx += ax * dt;
     ball.vy += ay * dt;
 
-    ball.x += ball.vx;
-    ball.y += ball.vy;
-    if(ball.y > canvas.height) {
+    ball.x += ball.vx * dt;
+    ball.y += ball.vy * dt;
+    
+    if(ball.y > (canvas.height - 55)) {
         ball.vy = - e * ball.vy;
     }
 
