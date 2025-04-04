@@ -29,10 +29,7 @@ function update() {
     ball.x += ball.vx * dt;
     ball.y += ball.vy * dt;
     
-    if(ball.y > y0) {
-        ball.vy = - e * ball.vy;
-    }
-
+    
     path.push([ball.x, ball.y]);
 }
 
