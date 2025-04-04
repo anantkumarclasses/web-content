@@ -1,3 +1,27 @@
+// HTML buttons UI
+const controls = document.createElement("div");
+controls.style.position = "fixed";
+controls.style.top = "10px";
+controls.style.left = "10px";
+controls.style.backgroundColor = "rgba(255,255,255,0.8)";
+controls.style.padding = "10px";
+controls.style.borderRadius = "8px";
+controls.style.zIndex = "10";
+
+["Uniform Velocity", "Uniform Acceleration", "Non-Uniform Acceleration"].forEach((label, idx) => {
+    const btn = document.createElement("button");
+    btn.innerText = label;
+    btn.style.margin = "5px";
+    btn.onclick = () => {
+        if (idx === 0) motionType = "uniform_velocity";
+        if (idx === 1) motionType = "uniform_acceleration";
+        if (idx === 2) motionType = "non_uniform_acceleration";
+    };
+    controls.appendChild(btn);
+});
+
+document.body.appendChild(controls);
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -8,8 +32,8 @@ let ball = {
     y: 100,
     vx: 2, // Initial velocity in x-direction
     vy: 1, // Initial velocity in y-direction
-    ax: 0, // Acceleration in x-direction
-    ay: 0, // Acceleration in y-direction
+    ax: 0.1, // Acceleration in x-direction
+    ay: 0.1, // Acceleration in y-direction
     radius: 20,
     color: "blue"
 };
@@ -63,10 +87,3 @@ function animate() {
 
 // Start animation
 animate();
-
-// Change motion type dynamically
-window.addEventListener("keydown", (event) => {
-    if (event.key === "1") motionType = "uniform_velocity";
-    if (event.key === "2") motionType = "uniform_acceleration";
-    if (event.key === "3") motionType = "non_uniform_acceleration";
-});
