@@ -14,6 +14,7 @@ let ball = {
 const g = 9.8;
 const dt = 0.02;
 const k = 0.05; // Air resistance coefficient
+const e = 0.05;
 let path = [];
 
 function update() {
@@ -26,6 +27,9 @@ function update() {
 
     ball.x += ball.vx;
     ball.y += ball.vy;
+    if(ball.y > canvas.height) {
+        ball.vy = - e * ball.vy;
+    }
 
     path.push([ball.x, ball.y]);
 }
