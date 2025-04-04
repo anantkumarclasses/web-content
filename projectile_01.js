@@ -6,8 +6,8 @@ canvas.height = window.innerHeight;
 let ball = {
     x: 50,
     y: canvas.height - 50,
-    vx: 10 * Math.cos(Math.PI / 3),
-    vy: -10 * Math.sin(Math.PI / 3),
+    vx: 20 * Math.cos(Math.PI / 3),
+    vy: -20 * Math.sin(Math.PI / 3),
     radius: 5
 };
 
